@@ -113,7 +113,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="#Paintings" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-expanded="false">Howdy, {{ Auth::user()->username }}<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/logout">Logout</a></li>
@@ -150,7 +150,7 @@
                 <li><a href="/ims/events"><span class="glyphicon glyphicon-calendar"></span> Events</a></li>
                 <li><a href="/ims/gallery"><span class="glyphicon glyphicon-camera"></span> Art Gallery</a></li>
                 <li><a href="/ims/carousel"><span class="glyphicon glyphicon-play"></span> Carousel</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
+                <li><a href="/ims/reports"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
             </ul>
         </div>
         {{--<div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">--}}
