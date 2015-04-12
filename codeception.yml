@@ -12,9 +12,9 @@ modules:
     config:
         Db:
             dsn: 'mysql:host=localhost;dbname=art-test'
-            user: 'root'
+            user:     'root'
             password: 'root'
-            dump: tests/_data/dump.sql
+            dump: app/tests/_data/dump.sql
 coverage:
     whitelist:
         include:

@@ -87,7 +87,7 @@
 
         <div class="form-group">
             {{ Form::label('description', 'Description') }}
-            {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control' , 'rows' => 10)) }}
+            {{ Form::textarea('descriptionTextArea', Input::old('description'), array('class' => 'form-control' , 'rows' => 10)) }}
             @if ($errors->has('description')) <p
                     class="help-block">{{ $errors->first('description') }}</p> @endif
         </div>
@@ -103,8 +103,6 @@
         </div>
 
         {{ Form::close() }}
-    </div>
-    </div>
     </div>
     {{--<script>$('.selectpicker').selectpicker();</script>--}}
     {{--<script>$(document).ready(function() {--}}

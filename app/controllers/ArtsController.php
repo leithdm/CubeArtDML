@@ -109,7 +109,7 @@ public  function store()
         $art->width = Input::get('width');
         $art->depth = Input::get('depth');
         $art->price = Input::get('price');
-        $art->description = Input::get('description');
+        $art->description = Input::get('descriptionTextArea');
         $art->subject = Input::get('subject');
         $art->medium = Input::get('medium');
         $art->artist_id = Input::get('artist');
@@ -190,7 +190,7 @@ function update($id)
         $art->depth = Input::get('depth');
         $art->category = Input::get('category');
         $art->price = Input::get('price');
-        $art->description = Input::get('description');
+        $art->description = Input::get('descriptionTextArea');
         $art->subject = Input::get('subject');
         $art->medium = Input::get('medium');
 
