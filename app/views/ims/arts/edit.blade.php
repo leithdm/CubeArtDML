@@ -85,10 +85,10 @@
             </div>
 
             <div class="form-group">
-                {{ Form::label('description', 'Description') }}
-                {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control' , 'rows' => 10)) }}
-                @if ($errors->has('description')) <p
-                        class="help-block">{{ $errors->first('description') }}</p> @endif
+                {{ Form::label('descriptionLabel', 'Description') }}
+                {{ Form::textarea('details', Input::old('details'), array('class' => 'form-control' , 'rows' => 10)) }}
+                @if ($errors->has('details')) <p
+                        class="help-block">{{ $errors->first('details') }}</p> @endif
             </div>
 
             <div class="form-group">

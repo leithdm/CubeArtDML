@@ -11,7 +11,7 @@ class IMSArtistCest {
     $I->fillField('password', 'admin');
     $I->click('Submit');
     $I->seeCurrentUrlEquals('/ims/dashboard');
-    $I->amGoingTo('navigate to the inventory section of IMS located at /ims/artists');
+    $I->amGoingTo('navigate to the artist section of IMS located at /ims/artists');
     $I->amOnPage('/ims/artists');
     $I->click('Add an artist');
 
@@ -36,7 +36,7 @@ class IMSArtistCest {
     $I->attachFile('picture', 'testArtistPicture.png');
     $I->click('Create the Artist!');
 
-    //confirm that the newly created art item is present.
+    //confirm that the newly created artist is present.
     $I->seeCurrentUrlEquals('/ims/artists');
     $I->canSee('Successfully created the Artist!');
     $I->click('Last Updated'); //filter the list based on 'last updated'
@@ -49,10 +49,10 @@ class IMSArtistCest {
     $I->canSee('+00-1234-56789');
   }
 
-  public function createNewArtistWithoutFillingInAnyDetails(AcceptanceTester $I)
+  public function createNewArtistWithoutFillingInAnyFormDetails(AcceptanceTester $I)
   {
     $I->am('An Administrator');
-    $I->amGoingTo('create a new artist using the IMS. I will login to the IMS first.');
+    $I->amGoingTo('create a new artist by trying to click create on a blank form. I will login to the IMS first.');
     $I->amOnPage('/admin');
     $I->fillField('username', 'admin');
     $I->fillField('password', 'admin');
@@ -88,7 +88,7 @@ class IMSArtistCest {
     $I->fillField('password', 'admin');
     $I->click('Submit');
     $I->seeCurrentUrlEquals('/ims/dashboard');
-    $I->amGoingTo('navigate to the inventory section of IMS located at /ims/artists');
+    $I->amGoingTo('navigate to the artist section of IMS located at /ims/artists');
     $I->amOnPage('/ims/artists');
     $I->click('Add an artist');
 
@@ -109,5 +109,105 @@ class IMSArtistCest {
     $I->canSee('The pinterest format is invalid.');
     $I->canSee('The google format is invalid.');
     $I->canSee('The picture must be an image.');
+  }
+
+  public function editNewArtist(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('edit an artist. I will login to the IMS first.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the artist section of IMS located at /ims/artists');
+    $I->amOnPage('/ims/artists');
+    $I->click('Last Updated');
+    $I->click('Last Updated');
+    $I->see('FirstNameTest');
+    $I->click(['class' => 'btn-info']); //click on link to show details of the artist
+    $I->seeCurrentUrlEquals('/ims/artists/251/edit'); //confirm on edit page of newly created artist
+
+    //perform edits
+    $I->fillField('first_name','FirstNameTestEdit');
+    $I->fillField('middle_name','MiddleNameTestEdit');
+    $I->fillField('second_name','LastNameTestEdit');
+    $I->fillField('address1','Address1TestEdit');
+    $I->fillField('address2','Address2TestEdit');
+    $I->fillField('address3','Address3TestEdit');
+    $I->fillField('city','CityTestEdit');
+    $I->fillField('country','CountryTestEdit');
+    $I->fillField('about','AboutTestEdit');
+    $I->fillField('quote','QuoteTestEdit');
+    $I->fillField('email','test@testedit.com');
+    $I->fillField('phone1','+00');
+    $I->fillField('phone2','+00');
+    $I->fillField('facebook','http://www.testfacebookedit.com');
+    $I->fillField('twitter','http://www.testtwitteredit.com');
+    $I->fillField('pinterest','http://www.testpinterestedit.com');
+    $I->fillField('google','http://www.testgoogleedit.com');
+    $I->attachFile('picture', 'testArtistPictureTwo.jpg');
+    $I->click('Edit the Artist!');
+
+    //confirm that the newly edited artist is present.
+    $I->seeCurrentUrlEquals('/ims/artists');
+    $I->canSee('Successfully updated the Artist!');
+    $I->click('Last Updated'); //filter the list based on 'last updated'
+    $I->click('Last Updated'); //in order to put in desc mode
+    $I->canSee('FirstNameTestEdit');
+    $I->canSee('LastNameTestEdit');
+    $I->canSee('CityTestEdit');
+    $I->canSee('CountryTestEdit');
+    $I->canSee('test@testedit.com');
+    $I->canSee('+00');
+  }
+
+  public function editArtistUsingIncorrectDataTypes(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('edit the first artist on list using incorrect data types for the form fields. I will login to the IMS first.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the artists section of IMS located at /ims/artists');
+    $I->amOnPage('/ims/artists');
+    $I->click(['class' => 'btn-info']); //click on link to show details of the first artist
+    $I->seeCurrentUrlEquals('/ims/artists/1/edit'); //confirm on edit page of newly created artist
+
+    //use of incorrect data types for filling out the form.
+    $I->fillField('email','test');
+    $I->fillField('facebook','test');
+    $I->fillField('twitter','test');
+    $I->fillField('pinterest','test');
+    $I->fillField('google','test');
+    $I->attachFile('picture', 'testExcelFile.xlsx');
+    $I->click('Edit the Artist!');
+
+    //confirm that field validation is working
+    $I->seeCurrentUrlEquals('/ims/artists/1/edit');
+    $I->canSee('The email must be a valid email address.');
+    $I->canSee('The facebook format is invalid.');
+    $I->canSee('The twitter format is invalid.');
+    $I->canSee('The pinterest format is invalid.');
+    $I->canSee('The google format is invalid.');
+    $I->canSee('The picture must be an image.');
+  }
+
+  public function deleteArtist(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('delete an artist. I will login to the IMS first.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the artists section of IMS located at /ims/artists');
+    $I->amOnPage('/ims/artists');
+    $I->click(['class' => 'btn-danger']); //click on button to delete the first artist from the list
+    $I->seeCurrentUrlEquals('/ims/artists'); //confirm still on index page of artists
+    $I->canSee('Successfully deleted the Artist!');
   }
 }

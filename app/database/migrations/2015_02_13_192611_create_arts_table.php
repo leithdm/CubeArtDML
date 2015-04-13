@@ -54,7 +54,7 @@ class CreateArtsTable extends Migration {
             $table->decimal('height');
             $table->decimal('width');
             $table->decimal('depth');
-            $table->text('description', 1000);
+            $table->text('details', 1000);
             $table->string('picture', 255)->nullable();
             $table->integer('views')->nullable();
             $table->string('status', 255);

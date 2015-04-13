@@ -14,7 +14,7 @@ return array(
 
 	'connections' => array(
 
-		'testing' => array(
+		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
 			'database'  => 'art-test',

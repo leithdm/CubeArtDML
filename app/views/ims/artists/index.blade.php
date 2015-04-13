@@ -134,10 +134,6 @@
                                href="{{ URL::to('artist/' .$artist->id) }}"><span
                                         class="glyphicon glyphicon-globe"></span></a>
 
-                            {{--<!-- add an item of art (uses the edit method found at GET ims/artists/{id}/edit -->--}}
-                            {{--<a class="btn btn-small btn-warning"--}}
-                            {{--href="{{ URL::to('ims/artists/create') }}"><span class="glyphicon glyphicon-plus"></span></a>--}}
-
                             <!-- delete the artist (uses the destroy method DESTROY ims/artists/{id} -->
                             {{ Form::open(['method' => 'delete', 'class' => 'pull-right', 'route' => ['ims.artists.destroy', $artist->id]]) }}
                             {{ Form::button('<span class="glyphicon glyphicon-trash"></span>', array('class'=>'btn btn-danger','type'=>'submit'))}}
