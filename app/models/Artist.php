@@ -22,10 +22,10 @@ class Artist extends Eloquent {
         'about'       => 'required',
         'quote'       => 'required',
         'email'       => 'required|email',
-        'facebook'    => 'active_url',
-        'twitter'     => 'active_url',
-        'pinterest'   => 'active_url',
-        'google'      => 'active_url',
+        'facebook'    => 'url',
+        'twitter'     => 'url',
+        'pinterest'   => 'url',
+        'google'      => 'url',
         'picture'     => 'image'
     );
 

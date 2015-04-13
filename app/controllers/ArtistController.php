@@ -120,7 +120,7 @@ class ArtistController extends \BaseController {
 
             //redirect
             Session::flash('message', 'Successfully created the Artist!');
-            return Redirect::back();
+            return Redirect::to('ims/artists');
         }
 
     }

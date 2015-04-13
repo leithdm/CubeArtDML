@@ -139,7 +139,7 @@
                     }}
                     @endif
                 </th>
-                <th>@if ($sortBy == 'price' && $direction == 'asc')
+                <th>@if ($sortBy == 'updated_at' && $direction == 'asc')
                         {{
                         link_to_route('ims.arts.index','Last Updated',['sortBy' => 'updated_at','direction' => 'desc'])
                     }}
