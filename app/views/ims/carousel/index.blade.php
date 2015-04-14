@@ -18,10 +18,11 @@
                         <div class="gallerythumbnail">
                             <a href="{{ URL::to('ims/carousel/' . $gallery->id . '/edit') }}"><img
                                         src="/artPictures/{{ $gallery->arts->picture }}"
-                                        alt="picture"
+                                        alt="picture{{$gallery->id}}"
                                         style="width:150px;height:150px"></a>
                         </div>
                         <p id=gallery-thumbnail-title>{{ "'". $gallery->arts->title. "'"}}</p>
+                        <p id=gallery-thumbnail-artist>{{ 'Art#' . $gallery->arts->id }}</p>
 
                         <a href="{{ URL::to('artist/' . $gallery->arts->artist_id) }}"><p
                                     id=gallery-thumbnail-artist>{{$gallery->arts->artist->first_name . " " .  $gallery->arts->artist->second_name }}</p>
