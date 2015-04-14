@@ -14,6 +14,8 @@
             </div>
         @endif
 
+      {{ Form::open(['route' => 'ims.customers.store', 'files' => true]) }}
+
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
             {{ Form::select('title', array('Mr.' => 'Mr.', 'Mrs.' => 'Mrs.', 'Miss.' => 'Miss.', 'Ms.' => 'Ms.', 'Other' => 'Other'), Input::old('title'), array('class' => 'form-control')) }}

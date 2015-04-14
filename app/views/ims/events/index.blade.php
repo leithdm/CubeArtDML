@@ -23,7 +23,7 @@
                     {{ Form::select('criteria', array(
                     'search' => 'Select search criteria',
                     'title' => 'Title',
-                    'description' => 'Description',
+                    'about' => 'About',
                     'event#' => 'Event#'),
                     Input::old('criteria'),
                     ['class' => 'form-control']) }}
@@ -64,12 +64,12 @@
                     }}
                     @endif
                 </th>
-                <th>@if ($sortBy == 'description' && $direction == 'asc')
+                <th>@if ($sortBy == 'about' && $direction == 'asc')
                         {{
-                        link_to_route('ims.events.index','Description',['sortBy' => 'description','direction' => 'desc'])
+                        link_to_route('ims.events.index','About',['sortBy' => 'about','direction' => 'desc'])
                     }}
                     @else {{
-                        link_to_route('ims.events.index','Description', ['sortBy' => 'description','direction' => 'asc'])
+                        link_to_route('ims.events.index','About', ['sortBy' => 'about','direction' => 'asc'])
                     }}
                     @endif
                 </th>
@@ -94,7 +94,7 @@
                         <td>{{ $event->id }}</td>
                         <td>{{ $event->title }}</td>
                         <td>{{ date("d-M-Y H:i a", strtotime($event->date_event)) }}</td>
-                        <td>{{ $event->description }}</td>
+                        <td>{{ $event->about }}</td>
                         <td>{{ date("d-M-y H:i a", strtotime($event->updated_at)) }}</td>
                         <!-- we will also add show, edit, and delete buttons -->
                         <td>

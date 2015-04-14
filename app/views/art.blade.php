@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="art-details-header">
-                    <h2><a href="{{ URL::to('artist/' . $art->artist->id) }}">{{$art->artist->first_name . " " .  $art->artist->second_name}}</a>{{", ". "'".$art->title."'"}}</h2>
+                    <h2 id="artist-name"><a href="{{ URL::to('artist/' . $art->artist->id) }}">{{$art->artist->first_name . " " .  $art->artist->second_name}}</a>{{", ". "'".$art->title."'"}}</h2>
                     <br/>
                 </div>
             </div>
@@ -18,7 +18,7 @@
             <div class="art-details-picture-sidebar">
                 <div class="row">
                     <div class="col-md-8">
-                        <img src="/artPictures/{{ $art->picture }}" alt="picture" style="width:700px;height:700px">
+                        <img src="/artPictures/{{ $art->picture }}" alt="large-picture" style="width:700px;height:700px">
                     </div>
                     <div class="col-md-4">
                         <div class="art-details-rightsidebar">

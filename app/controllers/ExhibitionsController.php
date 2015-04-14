@@ -83,7 +83,7 @@ class ExhibitionsController extends \BaseController {
             $exhibition = new Exhibition;
             $exhibition->title = Input::get('title');
 
-            //not great code here.
+            //not great code here. Seriously needs to be changed as hard-coding a value if no date is inputted !
             if (!Input::has('date'))
             {
                 $exhibition->date_event = "2015-01-01 00:00:00";
@@ -92,8 +92,7 @@ class ExhibitionsController extends \BaseController {
                 $exhibition->date_event = Input::get('date');
             }
 
-//            $exhibition->date_event = Input::get('date');
-            $exhibition->description = Input::get('description');
+            $exhibition->about = Input::get('about');
 
             if (Input::hasFile('picture'))
             {
@@ -173,7 +172,7 @@ class ExhibitionsController extends \BaseController {
             $exhibition->date_event = Input::get('date');
             }
 
-            $exhibition->description = Input::get('description');
+            $exhibition->about = Input::get('about');
 
             if (Input::hasFile('picture'))
             {

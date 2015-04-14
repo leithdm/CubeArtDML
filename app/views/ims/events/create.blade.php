@@ -28,9 +28,9 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('description', 'Description') }}
-            {{ Form::textarea('description', Input::old('description'), array('class' => 'form-control', 'rows' => 5)) }}
-            @if ($errors->has('description')) <p class="help-block">{{ $errors->first('description') }}</p> @endif
+            {{ Form::label('about', 'About') }}
+            {{ Form::textarea('about', Input::old('about'), array('class' => 'form-control', 'rows' => 5)) }}
+            @if ($errors->has('about')) <p class="help-block">{{ $errors->first('about') }}</p> @endif
         </div>
 
         <div class="form-group">

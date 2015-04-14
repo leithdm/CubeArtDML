@@ -12,14 +12,8 @@ class Exhibition extends Eloquent {
 
     public static $rules = array(
         'title'       => 'required',
-//        'date_event'  => 'required|date_format:"Y/m/d H:i"',
-        'description' => 'required',
+        'about' => 'required',
         'picture'     => 'image'
     );
-
-//    public function arts()
-//    {
-//        return $this->hasMany('Art');
-//    }
 
 }
