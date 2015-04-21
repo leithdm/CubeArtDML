@@ -2,6 +2,32 @@
 
 class IMSOrdersCest {
 
+  public function retrieveATableOfAllOrders(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('navigate to the orders page of the IMS. I should see a table of all orders, with relevant details.
+    First I am going to log into the IMS.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the orders section of IMS located at /ims/orders');
+    $I->amOnPage('/ims/orders');
+    $I->expect('to see information regarding each orders in the database');
+    $I->canSee('Art Item');
+    $I->canSee('P.O#');
+    $I->canSee('Art#');
+    $I->canSee('Customer');
+    $I->canSee('Total Cost (€)');
+    $I->canSee('Date of P.O');
+    $I->canSee('Last Updated');
+    $I->expect('to see a link to edit any orders item from the table. Here we will test the first order');
+    $I->canSeeLink('', 'ims/orders/1/edit'); //this is a link
+    $I->expect('to see a glyph-icon to delete any order from the table. Here we will test whether we can see the icon');
+    $I->canSeeElement(['class' => 'glyphicon-trash']); //this is a link
+  }
+
   public function createANewOrder(AcceptanceTester $I)
   {
     $I->am('An Administrator');
@@ -14,13 +40,11 @@ class IMSOrdersCest {
     $I->amGoingTo('navigate to the order section of IMS located at /ims/orders');
     $I->amOnPage('/ims/orders');
     $I->click('Add an order');
-
     //filling out the form for creating a new order
     $I->selectOption('artItem','1');
     $I->selectOption('customer', '1');
     $I->fillField('sellingPrice', '10000');
     $I->click('Create the Purchase Order!');
-
     //confirm that the newly created order is present.
     $I->seeCurrentUrlEquals('/ims/orders');
     $I->canSee('Successfully added the Order!');
@@ -68,11 +92,9 @@ class IMSOrdersCest {
     $I->amGoingTo('navigate to the order section of IMS located at /ims/orders');
     $I->amOnPage('/ims/orders');
     $I->click('Add an order');
-
     //use of incorrect data types for filling out the form.
     $I->fillField('sellingPrice', 'test');
     $I->click('Create the Purchase Order!');
-
     //confirm that field validation is working
     $I->seeCurrentUrlEquals('/ims/orders/create');
     $I->canSee('The selling price must be a number.');

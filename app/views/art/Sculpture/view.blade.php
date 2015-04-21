@@ -62,7 +62,7 @@
             <div class="art-details-picture-sidebar">
                 <div class="row">
                     <div class="col-md-12">
-                        <h4>{{$art->description}}</h4>
+                        <h4>{{$art->details}}</h4>
                     </div>
                 </div>
             </div>

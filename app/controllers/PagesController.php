@@ -258,4 +258,28 @@ class PagesController extends \BaseController {
 
     }
 
+  /**
+   * Check credentials, and log the user into the IMS/CMS portal
+   * @return Response
+   */
+  public function events()
+  {
+    //search query
+    $query = Input::get('query');
+
+    if ($query  == 'latest')
+    {
+      $exhibitions = Exhibition::orderBy('date_event', 'desc')->paginate(5);
+    }
+    elseif ($query  == 'oldest')
+    {
+      $exhibitions = Exhibition::orderBy('date_event', 'asc')->paginate(5);
+    }
+    else
+    {
+      $exhibitions = Exhibition::orderBy('date_event', 'asc')->paginate(5);
+    }
+    return View::make('/events', ['exhibitions' => $exhibitions]);
+  }
+
 }

@@ -64,6 +64,8 @@ Route::get('/art/Drawing/{id}', 'PagesController@drawingView');
 
 Route::get('/art/Sculpture/{id}', 'PagesController@sculptureView');
 
+Route::get('/events', 'PagesController@events');
+
 Route::get('/artist/{id}', function($id) {
   $artist = Artist::find($id);
   $artistArt = Art::where('artist_id', $id)->get();

@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+    <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-1 main">
         <h1 class="page-header"><span class="glyphicon glyphicon-calendar"></span> Events</h1>
 
         <!-- will be used to show any messages -->
@@ -64,15 +64,15 @@
                     }}
                     @endif
                 </th>
-                <th>@if ($sortBy == 'about' && $direction == 'asc')
-                        {{
-                        link_to_route('ims.events.index','About',['sortBy' => 'about','direction' => 'desc'])
-                    }}
-                    @else {{
-                        link_to_route('ims.events.index','About', ['sortBy' => 'about','direction' => 'asc'])
-                    }}
-                    @endif
-                </th>
+                {{--<th>@if ($sortBy == 'about' && $direction == 'asc')--}}
+                        {{--{{--}}
+                        {{--link_to_route('ims.events.index','About',['sortBy' => 'about','direction' => 'desc'])--}}
+                    {{--}}--}}
+                    {{--@else {{--}}
+                        {{--link_to_route('ims.events.index','About', ['sortBy' => 'about','direction' => 'asc'])--}}
+                    {{--}}--}}
+                    {{--@endif--}}
+                {{--</th>--}}
                 <th>@if ($sortBy == 'updated_at' && $direction == 'asc')
                         {{
                         link_to_route('ims.events.index','Last Updated',['sortBy' => 'updated_at','direction' => 'desc'])
@@ -94,7 +94,7 @@
                         <td>{{ $event->id }}</td>
                         <td>{{ $event->title }}</td>
                         <td>{{ date("d-M-Y H:i a", strtotime($event->date_event)) }}</td>
-                        <td>{{ $event->about }}</td>
+                        {{--<td>{{ $event->about }}</td>--}}
                         <td>{{ date("d-M-y H:i a", strtotime($event->updated_at)) }}</td>
                         <!-- we will also add show, edit, and delete buttons -->
                         <td>

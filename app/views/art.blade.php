@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="art-details-rightsidebar">
-                            <h3>{{ "'". $art->title ."'" }}</h3>
+                            <div class="artTitle"><h3>{{ "'". $art->title ."'" }}</h3></div>
                             <h4><a href="{{ URL::to('artist/' . $art->artist->id) }}">{{$art->artist->first_name . " " .  $art->artist->second_name}}</a></h4>
                             <h5>{{$art->artist->country}}</h5>
                             <br/>

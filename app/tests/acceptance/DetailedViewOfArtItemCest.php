@@ -10,7 +10,8 @@ class DetailedViewOfArtItemCest {
     $I->amOnPage('art/Drawing/1');
     $I->see('MORE BY');
     $I->see('YOU MIGHT LIKE...');
-    $I->see('#artist-name');
+    $I->seeElement(['class' => 'art-details-rightsidebar']);
+
 
   }
 

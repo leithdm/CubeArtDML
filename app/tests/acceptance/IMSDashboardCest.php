@@ -30,15 +30,15 @@ class IMSDashboardCest {
   public function seeUsernameOnIMSDashboard(AcceptanceTester $I)
   {
     $I->am('An Administrator');
-    $I->amGoingTo('see my username when I login to the IMS');
+    $I->amGoingTo('see my username when I login to the IMS. The username will show on the /ims/dashboard page');
     $I->amOnPage('/ims/dashboard');
-    $I->expect('to be redirected to ims/admin as I am not logged in to the IMS .');
+    $I->expect('to be redirected to ims/admin as I am not logged in to the IMS.'); //additional test
     $I->amOnPage('/admin');
     $I->fillField('username', 'admin');
     $I->fillField('password', 'admin');
     $I->click('Submit');
     $I->seeCurrentUrlEquals('/ims/dashboard');
-    $I->canSee('Howdy, admin');
+    $I->canSee('Howdy, admin'); //can see "Howdy, admin" on the ims/dashboard page.
   }
 
 

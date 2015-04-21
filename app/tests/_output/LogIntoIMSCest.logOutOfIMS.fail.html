@@ -4,16 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description"
+          content="Buy modern artwork from artists around the world. Find paintings, photography, drawings, sculptures & prints.">
     <meta name="author" content="">
 
-        <title>IMS | Dashboard</title>
-
+        <title>Cube Art Studio</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/yeti/bootstrap.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-    <link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/main.css">
+        <link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/main.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,13 +21,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
 <div class="navbar-wrapper">
-    <div class="container-fluid">
-        <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+                <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed"
@@ -41,85 +43,28 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img alt="Brand" src="/brand/brand.jpg"
-                                                          style="width:35px;height:30px">
+                    <a class="navbar-brand" href="/">
+                        <img alt="Brand" src="/brand/brand.jpg" style="width:35px;height:30px">
                     </a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="/ims/arts/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Inventory <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/ims/arts"><span class="glyphicon glyphicon-search"></span> View all items</a>
-                                </li>
-                                <li><a href="/ims/arts/create"><span class="glyphicon glyphicon-plus"></span> Add an
-                                        item</a></li>
-                            </ul>
+                        <li class="active">
+                        <li>
+                            <a href="/art/Painting/" role="button" aria-expanded="false">PAINTINGS</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="/ims/artists/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Artists <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/ims/artists"><span class="glyphicon glyphicon-search"></span> View all
-                                        artists</a></li>
-                                <li><a href="/ims/artists/create"><span class="glyphicon glyphicon-plus"></span> Add an
-                                        artist</a></li>
-                            </ul>
+                        <li>
+                            <a href="/art/Photography/" role="button" aria-expanded="false">PHOTOGRAPHY</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="/ims/customers/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Customers <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/ims/customers"><span class="glyphicon glyphicon-search"></span> View all
-                                        customers</a></li>
-                                <li><a href="/ims/customers/create"><span class="glyphicon glyphicon-plus"></span> Add a
-                                        customer</a></li>
-                            </ul>
+                        <li>
+                            <a href="/art/Drawing/" role="button" aria-expanded="false">DRAWINGS</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="/ims/orders/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Orders <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/ims/orders"><span class="glyphicon glyphicon-search"></span> View all
-                                        orders</a></li>
-                                <li><a href="/ims/orders/create"><span class="glyphicon glyphicon-plus"></span> Add an
-                                        order</a></li>
-                            </ul>
+                        <li>
+                            <a href="/art/Sculpture/" role="button" aria-expanded="false">SCULPTURE</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="/ims/employees/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Staff <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/ims/employees"><span class="glyphicon glyphicon-search"></span> View all
-                                        staff</a></li>
-                                <li><a href="/ims/employees/create"><span class="glyphicon glyphicon-plus"></span> Add a
-                                        staff member</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="/ims/events/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Events <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/ims/events"><span class="glyphicon glyphicon-search"></span> View all
-                                        events</a></li>
-                                <li><a href="/ims/events/create"><span class="glyphicon glyphicon-plus"></span> Add an
-                                        event</a></li>
-                                <li class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Howdy, admin<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/logout">Logout</a></li>
-                                <li><a href="#">Edit Profile</a></li>
-                            </ul>
+                        <li>
+                            <a href="/art/Collage/" role="button" aria-expanded="false">COLLAGE</a>
                         </li>
                     </ul>
                 </div>
@@ -127,19 +72,17 @@
         </nav>
     </div>
 </div>
-<!-- SIDEBAR
-================================================== -->
-<div id="flash-overlay-modal" class="modal fade flash-modal">
+    <div id="flash-overlay-modal" class="modal fade flash-modal">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-                <h4 class="modal-title">Welcome Back!</h4>
+                <h4 class="modal-title">See you next time!</h4>
             </div>
 
             <div class="modal-body">
-                <p>You are now logged in</p>
+                <p>You are now logged out</p>
             </div>
 
             <div class="modal-footer">
@@ -148,58 +91,522 @@
         </div>
     </div>
 </div>
-    <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-1 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="/ims/dashboard"><span class="glyphicon glyphicon-home"></span>
-                        Dashboard<span class="sr-only">(current)</span></a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="/ims/arts"><span class="glyphicon glyphicon-shopping-cart"></span> Inventory</a>
-                <li><a href="/ims/artists"><span class="glyphicon glyphicon-tint"></span> Artists</a></li>
-                </li>
-            </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="/ims/customers"><span class="glyphicon glyphicon-king"></span> Customers</a>
-                </li>
-                <li><a href="/ims/orders"><span class="glyphicon glyphicon-euro"></span> Orders</a>
-                </li>
-                <li><a href="/ims/employees"><span class="glyphicon glyphicon-user"></span> Staff</a></li>
-                <li><a href="/ims/events"><span class="glyphicon glyphicon-calendar"></span> Events</a></li>
-                <li><a href="/ims/gallery"><span class="glyphicon glyphicon-camera"></span> Art Gallery</a></li>
-                <li><a href="/ims/carousel"><span class="glyphicon glyphicon-play"></span> Carousel</a></li>
-                <li><a href="/ims/reports"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
-            </ul>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="/artPictures/">
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <p class="carousel-firstPicture-headingone">Find Art You Love</p>
+
+                        <p class="carousel-firstPicture-headingtwo">Choose from over 500,000 original works of art</p>
+
+                        <p class="carousel-firstPicture-headingthree"><span class="glyphicon glyphicon-ok"
+                                                                            style="color:deepskyblue"></span>
+                            Buy original artwork from E100 - E50,000</p>
+
+                        <p class="carousel-firstPicture-headingthree"><span class="glyphicon glyphicon-ok"
+                                                                            style="color:deepskyblue"></span>
+                            Paintings, photography, drawings, and sculptures from 45,000+ emerging artists</p>
+
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse the Gallery</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/artPictures/">
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <p class="carousel-firstPicture-headingone">Cube Art is the world’s leading online art gallery,
+                            connecting people with art and artists they love.</p>
+
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/artPictures/">
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">View the Artists</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-                <!-- MAIN CONTENT
-        ================================================== -->
-            <div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
-        <h1 class="page-header"><span class="glyphicon glyphicon-home"></span> IMS Dashboard</h1>
-        <div class="row">
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+        <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mainpage-header">
+                        <p id="new-artwork-header">CUBE ART SELECTS</p>
+
+                        <p id="new-artwork-tag">Discover original artwork from around the world, selected by Cube Art
+                            and
+                            guest curators.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="row">
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Collage/250"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'in'</p>
+
+                                <p id=gallery-thumbnail-category>Collage</p>
+
+                                <a href="http://localhost:8888/artist/124"><p
+                                            id=gallery-thumbnail-artist>Lulu Smitham</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Micronesia</p>
+
+                                                                <p id=gallery-thumbnail-price>€98,258</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Photography/89"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'vel'</p>
+
+                                <p id=gallery-thumbnail-category>Photography</p>
+
+                                <a href="http://localhost:8888/artist/19"><p
+                                            id=gallery-thumbnail-artist>Vesta Medhurst</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>United States Minor Outlying Islands</p>
+
+                                                                <p id=gallery-thumbnail-price>€93,179</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Photography/248"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'ut'</p>
+
+                                <p id=gallery-thumbnail-category>Photography</p>
+
+                                <a href="http://localhost:8888/artist/45"><p
+                                            id=gallery-thumbnail-artist>Roger Yost</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Palestinian Territory</p>
+
+                                                                <p id=gallery-thumbnail-price>€58,218</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Sculpture/258"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'quisquam'</p>
+
+                                <p id=gallery-thumbnail-category>Sculpture</p>
+
+                                <a href="http://localhost:8888/artist/10"><p
+                                            id=gallery-thumbnail-artist>River Lesch</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Serbia</p>
+
+                                                                <p id=gallery-thumbnail-price>€98,890</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Photography/82"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'sed'</p>
+
+                                <p id=gallery-thumbnail-category>Photography</p>
+
+                                <a href="http://localhost:8888/artist/205"><p
+                                            id=gallery-thumbnail-artist>Hildegard Pfeffer</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Albania</p>
+
+                                                                <p id=gallery-thumbnail-price>€5,144</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Collage/77"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'voluptatibus'</p>
+
+                                <p id=gallery-thumbnail-category>Collage</p>
+
+                                <a href="http://localhost:8888/artist/76"><p
+                                            id=gallery-thumbnail-artist>Austen Ryan</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Timor-Leste</p>
+
+                                                                <p id=gallery-thumbnail-price>€79,840</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Collage/147"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'vel'</p>
+
+                                <p id=gallery-thumbnail-category>Collage</p>
+
+                                <a href="http://localhost:8888/artist/109"><p
+                                            id=gallery-thumbnail-artist>Charlene Yost</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Philippines</p>
+
+                                                                <p id=gallery-thumbnail-price>€94,659</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Sculpture/209"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'sequi'</p>
+
+                                <p id=gallery-thumbnail-category>Sculpture</p>
+
+                                <a href="http://localhost:8888/artist/134"><p
+                                            id=gallery-thumbnail-artist>Emma Jenkins</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>French Guiana</p>
+
+                                                                <p id=gallery-thumbnail-price>€54,865</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Painting/28"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'est'</p>
+
+                                <p id=gallery-thumbnail-category>Painting</p>
+
+                                <a href="http://localhost:8888/artist/120"><p
+                                            id=gallery-thumbnail-artist>Cletus Mayer</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Bosnia and Herzegovina</p>
+
+                                                                <p id=gallery-thumbnail-price>€76,982</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Photography/9"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'culpa'</p>
+
+                                <p id=gallery-thumbnail-category>Photography</p>
+
+                                <a href="http://localhost:8888/artist/212"><p
+                                            id=gallery-thumbnail-artist>Elmo Muller</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Haiti</p>
+
+                                                                <p id=gallery-thumbnail-price>€66,261</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Drawing/16"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'ea'</p>
+
+                                <p id=gallery-thumbnail-category>Drawing</p>
+
+                                <a href="http://localhost:8888/artist/215"><p
+                                            id=gallery-thumbnail-artist>Elian Little</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Djibouti</p>
+
+                                                                <p id=gallery-thumbnail-price>€19,509</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                            <div class="col-md-4">
+                            <div class="art-details-youmightlike">
+                                <div class="thumbnail" style="padding: 20px">
+                                    <a href="http://localhost:8888/art/Photography/194"><img
+                                                src="/artPictures/"
+                                                alt="picture"
+                                                style="width:300px;height:300px"></a>
+                                </div>
+                                <p id=gallery-thumbnail-title>'qui'</p>
+
+                                <p id=gallery-thumbnail-category>Photography</p>
+
+                                <a href="http://localhost:8888/artist/130"><p
+                                            id=gallery-thumbnail-artist>Viviane Crooks</p>
+                                </a>
+
+                                <p id=gallery-thumbnail-category>Grenada</p>
+
+                                                                <p id=gallery-thumbnail-price>€8,708</p></span>
+                            </div>
+                            <div id="gallery-break"></div>
+                        </div>
+                                    </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mainpage-header">
+                            <div class="mainpage-header">
+                                <p id="new-artwork-header">NEW ARTWORK FOR SALE</p>
+
+                                <p id="new-artwork-tag">Browse the latest original art. Updated every hour.</p>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container">
+                    <div class="row">
+                                                    <div class="col-md-4">
+                                <div class="art-details-youmightlike">
+                                    <div class="thumbnail" style="padding: 20px">
+                                        <a href="http://localhost:8888/art/Sculpture/300"><img
+                                                    src="/artPictures/"
+                                                    alt="picture"
+                                                    style="width:300px;height:300px"></a>
+                                    </div>
+                                    <p id=gallery-thumbnail-title>'magni'</p>
+
+                                    <p id=gallery-thumbnail-category>Sculpture</p>
+
+                                    <a href="http://localhost:8888/artist/17"><p
+                                                id=gallery-thumbnail-artist>Clifton Williamson</p>
+                                    </a>
+
+                                    <p id=gallery-thumbnail-category>Saint Martin</p>
+
+                                                                        <p id=gallery-thumbnail-price>€56,843</p>
+                                </div>
+                                <div id="gallery-break"></div>
+                            </div>
+                                                    <div class="col-md-4">
+                                <div class="art-details-youmightlike">
+                                    <div class="thumbnail" style="padding: 20px">
+                                        <a href="http://localhost:8888/art/Drawing/299"><img
+                                                    src="/artPictures/"
+                                                    alt="picture"
+                                                    style="width:300px;height:300px"></a>
+                                    </div>
+                                    <p id=gallery-thumbnail-title>'accusantium'</p>
+
+                                    <p id=gallery-thumbnail-category>Drawing</p>
+
+                                    <a href="http://localhost:8888/artist/66"><p
+                                                id=gallery-thumbnail-artist>Cecil Mayer</p>
+                                    </a>
+
+                                    <p id=gallery-thumbnail-category>Luxembourg</p>
+
+                                                                        <p id=gallery-thumbnail-price>€97,038</p>
+                                </div>
+                                <div id="gallery-break"></div>
+                            </div>
+                                                    <div class="col-md-4">
+                                <div class="art-details-youmightlike">
+                                    <div class="thumbnail" style="padding: 20px">
+                                        <a href="http://localhost:8888/art/Photography/298"><img
+                                                    src="/artPictures/"
+                                                    alt="picture"
+                                                    style="width:300px;height:300px"></a>
+                                    </div>
+                                    <p id=gallery-thumbnail-title>'modi'</p>
+
+                                    <p id=gallery-thumbnail-category>Photography</p>
+
+                                    <a href="http://localhost:8888/artist/133"><p
+                                                id=gallery-thumbnail-artist>Winifred Thompson</p>
+                                    </a>
+
+                                    <p id=gallery-thumbnail-category>Iraq</p>
+
+                                                                        <p id=gallery-thumbnail-price>€50,705</p>
+                                </div>
+                                <div id="gallery-break"></div>
+                            </div>
+                                            </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mainpage-header">
+                                <div class="mainpage-header">
+                                    <p id="new-artwork-header">RECENTLY SOLD ARTWORK</p>
+                                    <p id="new-artwork-tag">See what's selling to collectors all over the world.</p>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="container">
+                        <div class="row">
+                                                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+<footer class="footer">
+    <div class="container">
+        <div class="footer-wrapper">
+            <div class="row">
+                <div class="col-md-3">
+                    <p>FOR BUYERS</p>
+
+                    <p>Art Advisory Services</p>
+
+                    <p>Buyer FAQ / Support</p>
+
+                    <p>Blog</p>
+                </div>
+                <div class="col-md-3">
+                    <p>FOR ARTISTS</p>
+
+                    <p>Sell Your Art</p>
+
+                    <p>Seller's Guide</p>
+
+                    <p>Artist FAQ / Support</p>
+                </div>
+                <div class="col-md-3">
+                    <p>ABOUT US</p>
+
+                    <p>Press</p>
+
+                    <p>Careers</p>
+
+                    <p>Contact Us</p>
+                </div>
+                <div class="col-md-3">
+                    <p>CUBE ART</p>
+
+                    <p>Terms of Service</p>
+
+                    <p>Privacy Policy</p>
+
+                    <p>Copyright Policy</p>
+
+                    <p>Affiliate Program</p>
+                </div>
+            </div>
+            <hr/>
+                <img alt="Brand" src="/brand/brand.jpg" style="width:35px;height:30px">&nbsp;&nbsp;&copy;2015 Cube Art. All rights reserved.
+            </a>
+        </div>
     </div>
-</div>
+</footer>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>$('#flash-overlay-modal').modal();</script>
-
-
-<script src="http://localhost:8888/js/jquery.js"></script>
-
-<script src="http://localhost:8888/js/jquery.datetimepicker.js"></script>
-
-<link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/jquery.datetimepicker.css">
-
-<script>
-    jQuery('#datetimepicker').datetimepicker({
-        formatDate:'Y/m/d',
-        minDate:'-1970/01/02'
-    });
-</script>
-
-                                                            
 </body>
 </html>

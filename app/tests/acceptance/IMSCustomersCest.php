@@ -2,6 +2,33 @@
 
 class IMSCustomersCest {
 
+  public function retrieveATableOfAllCustomers(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('navigate to the customers page of the IMS. I should see a table of all customers, with relevant details.
+    First I am going to log into the IMS.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the customers section of IMS located at /ims/customers');
+    $I->amOnPage('/ims/customers');
+    $I->expect('to see information regarding each customer in the database');
+    $I->canSee('Customer#');
+    $I->canSee('First Name');
+    $I->canSee('Last Name');
+    $I->canSee('City');
+    $I->canSee('Country');
+    $I->canSee('Phone#1');
+    $I->canSee('Email');
+    $I->canSee('Last Updated');
+    $I->expect('to see a link to edit any customer item from the table. Here we will test the first customer');
+    $I->canSeeLink('', 'ims/customers/1/edit'); //this is a link
+    $I->expect('to see a glyph-icon to delete any customer from the table. Here we will test whether we can see the icon');
+    $I->canSeeElement(['class' => 'glyphicon-trash']); //this is a link
+  }
+
   public function createANewCustomer(AcceptanceTester $I)
   {
     $I->am('An Administrator');
@@ -14,7 +41,6 @@ class IMSCustomersCest {
     $I->amGoingTo('navigate to the customer section of IMS located at /ims/customers');
     $I->amOnPage('/ims/customers');
     $I->click('Add a customer');
-
     //filling out the form for creating a new customer
     $I->fillField('first_name','FirstNameTest');
     $I->fillField('middle_name','MiddleNameTest');
@@ -28,8 +54,7 @@ class IMSCustomersCest {
     $I->fillField('phone1','+00-1234-56789');
     $I->fillField('phone2','+00-1234-56789');
     $I->click('Create the Customer!');
-
-    //confirm that the newly created artist is present.
+    //confirm that the newly created customer is present.
     $I->seeCurrentUrlEquals('/ims/customers');
     $I->canSee('Successfully created the Customer!');
     $I->click('Last Updated'); //filter the list based on 'last updated'
@@ -54,10 +79,8 @@ class IMSCustomersCest {
     $I->amGoingTo('navigate to the customer section of IMS located at /ims/customers');
     $I->amOnPage('/ims/customers');
     $I->click('Add a customer');
-
     //just click create without filling in the form
     $I->click('Create the Customer!');
-
     //confirm that field validation is working
     $I->seeCurrentUrlEquals('/ims/customers/create');
     $I->canSee('The first name field is required.');
@@ -101,14 +124,10 @@ class IMSCustomersCest {
     $I->fillField('password', 'admin');
     $I->click('Submit');
     $I->seeCurrentUrlEquals('/ims/dashboard');
-    $I->amGoingTo('navigate to the customer section of IMS located at /ims/customers');
+    $I->amGoingTo('navigate to the customer section of IMS located at /ims/customers and edit the first customer');
     $I->amOnPage('/ims/customers');
-    $I->click('Last Updated');
-    $I->click('Last Updated');
-    $I->see('FirstNameTest');
-    $I->click(['class' => 'btn-info']); //click on link to show details of the employee
-    $I->seeCurrentUrlEquals('/ims/customers/51/edit'); //confirm on edit page of newly created artist
-
+    $I->click(['class' => 'btn-info']); //click on link to show details of the customer
+    $I->seeCurrentUrlEquals('/ims/customers/1/edit'); //confirm on edit page of newly created artist
     //perform edits
     $I->fillField('first_name','FirstNameTestEdit');
     $I->fillField('middle_name','MiddleNameTestEdit');
@@ -122,7 +141,6 @@ class IMSCustomersCest {
     $I->fillField('phone1','+00');
     $I->fillField('phone2','+00-1');
     $I->click('Edit the Customer!');
-
     //confirm that the newly edited artist is present.
     $I->seeCurrentUrlEquals('/ims/customers');
     $I->canSee('Successfully updated the Customer!');

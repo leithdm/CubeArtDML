@@ -2,6 +2,38 @@
 
 class IMSArtsCest {
 
+  public function retrieveATableOfAllArtItems(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('navigate to the inventory page of the IMS. I should see a table of all art items, with relevant details.
+    First I am going to log into the IMS.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the inventory section of IMS located at /ims/arts');
+    $I->amOnPage('/ims/arts');
+    $I->expect('to see information regarding each art item in the database');
+    $I->canSee('Thumbnail');
+    $I->canSee('Art#');
+    $I->canSee('Status');
+    $I->canSee('Artist');
+    $I->canSee('Year');
+    $I->canSee('Title');
+    $I->canSee('Category');
+    $I->canSee('Subject');
+    $I->canSee('Medium');
+    $I->canSee('H(in)');
+    $I->canSee('W(in)');
+    $I->canSee('D(in)');
+    $I->canSee('Last Updated');
+    $I->expect('to see a link to edit any art item from the table. Here we will test the first art item');
+    $I->canSeeLink('', 'ims/arts/1/edit'); //this is a link
+    $I->expect('to see a glyph-icon to delete any art item from the table. Here we will test whether we can see the icon');
+    $I->canSeeElement(['class' => 'glyphicon-trash']); //this is a link
+  }
+
   public function createANewArtItem(AcceptanceTester $I)
   {
     $I->am('An Administrator');
@@ -14,24 +46,23 @@ class IMSArtsCest {
     $I->amGoingTo('navigate to the inventory section of IMS located at /ims/arts');
     $I->amOnPage('/ims/arts');
     $I->click('Add an item');
-
-    //filling out the form. Note: we have already migrated a database, with preset artists.
+    //filling out the form. Note: we have already migrated a test database, with some preset artists.
+    $I->amGoingTo('choose the first artist from the test database');
     $I->selectOption('artist','1');
-    $I->selectOption('status','Available');
+    $I->selectOption('status','Available'); //by default the status is set to available
     $I->selectOption('category','Painting');
     $I->selectOption('year','1980');
     $I->fillField('title','testCreateArt');
     $I->fillField('subject','testSubject');
     $I->fillField('medium','testMedium');
     $I->fillField('height','1');
-    $I->fillField('width','1');
-    $I->fillField('depth','1');
+    $I->fillField('width','11');
+    $I->fillField('depth','12');
     $I->fillField('price','5000');
     $I->fillField('details','This is an acceptance test');
-    $I->attachFile('picture', 'testArtPicture.jpg');
+    $I->attachFile('picture', 'testArtPicture.jpg'); //test picture
     $I->click('Add the item!');
-
-    //confirm that the newly created art item is present.
+    $I->amGoingTo('confirm that the newly created art item is present in the database');
     $I->seeCurrentUrlEquals('/ims/arts');
     $I->canSee('Successfully added the Art!');
     $I->click('Last Updated'); //filter the list based on 'last updated'
@@ -39,14 +70,14 @@ class IMSArtsCest {
     $I->canSee('testCreateArt');
     $I->canSee('testSubject');
     $I->canSee('testMedium');
-    $I->canSee('1.00');
-    $I->canSee('5,000');
+    $I->canSee('1.00'); //height with decimals
+    $I->canSee('5,000'); //the price
   }
 
   public function createNewArtItemWithoutFillingInAnyFormFields(AcceptanceTester $I)
   {
     $I->am('An Administrator');
-    $I->amGoingTo('create a new art inventory item without filling in any of the form fields. I will login to the IMS first.');
+    $I->amGoingTo('try to create a new art inventory item without filling in any of the form fields. I will login to the IMS first.');
     $I->amOnPage('/admin');
     $I->fillField('username', 'admin');
     $I->fillField('password', 'admin');
@@ -55,11 +86,10 @@ class IMSArtsCest {
     $I->amGoingTo('navigate to the inventory section of IMS located at /ims/arts');
     $I->amOnPage('/ims/arts');
     $I->click('Add an item');
-
-    //just click create without filling in the form
+    $I->amGoingTo('try to create a new art inventory item by clicking create without filling in the form');
     $I->click('Add the item!');
-
     //confirm that field validation is working
+    $I->expect('to see field validation messages');
     $I->seeCurrentUrlEquals('/ims/arts/create');
     $I->canSee('The artist field is required.');
     $I->canSee('The title field is required.');
@@ -113,12 +143,8 @@ class IMSArtsCest {
     $I->seeCurrentUrlEquals('/ims/dashboard');
     $I->amGoingTo('navigate to the inventory section of IMS located at /ims/artists');
     $I->amOnPage('/ims/arts');
-    $I->click('Last Updated');
-    $I->click('Last Updated');
-    $I->see('testCreateArt');
     $I->click(['class' => 'btn-info']); //click on link to show details of the art item
-    $I->seeCurrentUrlEquals('/ims/arts/301/edit'); //confirm on edit page of newly created art item
-
+    $I->seeCurrentUrlEquals('/ims/arts/1/edit'); //confirm on edit page of newly created art item
     //perform edits
     $I->fillField('title','testCreateArtEdit');
     $I->fillField('subject','testSubjectEdit');
@@ -130,8 +156,7 @@ class IMSArtsCest {
     $I->fillField('details','This is an acceptance test for editing an art item');
     $I->attachFile('picture', 'testArtPictureTwo.jpg');
     $I->click(['class' => 'btn-primary']);
-
-    //confirm that the newly edited artist is present.
+    //confirm that the newly edited art item is present.
     $I->seeCurrentUrlEquals('/ims/arts');
     $I->canSee('Successfully updated the item of Art!');
     $I->click('Last Updated'); //filter the list based on 'last updated'
@@ -154,16 +179,15 @@ class IMSArtsCest {
     $I->amOnPage('/ims/arts');
     $I->click(['class' => 'btn-info']); //click on link to show details of the first art item
     $I->seeCurrentUrlEquals('/ims/arts/1/edit'); //confirm on edit page of first art item
-
     //use of incorrect data types for filling out the form.
     $I->fillField('height','testEdit');
     $I->fillField('width','testEdit');
     $I->fillField('depth','testEdit');
     $I->fillField('price','testEdit');
-    $I->attachFile('picture', 'testExcelFile.xlsx');
+    $I->attachFile('picture', 'testExcelFile.xlsx'); //use of an excel file instead of an image
     $I->click(['class' => 'btn-primary']);
-
     //confirm that field validation is working
+    $I->expect('to see field validation errors');
     $I->seeCurrentUrlEquals('/ims/arts/1/edit');
     $I->canSee('The height must be a number.');
     $I->canSee('The width must be a number.');

@@ -2,6 +2,34 @@
 
 class IMSStaffCest {
 
+  public function retrieveATableOfAllStaffMembers(AcceptanceTester $I)
+  {
+    $I->am('An Administrator');
+    $I->amGoingTo('navigate to the staff page of the IMS. I should see a table of all employees, with relevant details.
+    First I am going to log into the IMS.');
+    $I->amOnPage('/admin');
+    $I->fillField('username', 'admin');
+    $I->fillField('password', 'admin');
+    $I->click('Submit');
+    $I->seeCurrentUrlEquals('/ims/dashboard');
+    $I->amGoingTo('navigate to the inventory section of IMS located at /ims/employees');
+    $I->amOnPage('/ims/employees');
+    $I->expect('to see information regarding each employee in the database');
+    $I->canSee('Thumbnail');
+    $I->canSee('Employee#');
+    $I->canSee('First Name');
+    $I->canSee('Last Name');
+    $I->canSee('City');
+    $I->canSee('Country');
+    $I->canSee('Email');
+    $I->canSee('Phone#1');
+    $I->canSee('Last Updated');
+    $I->expect('to see a link to edit any employee item from the table. Here we will test the first art item');
+    $I->canSeeLink('', 'ims/employees/1/edit'); //this is a link
+    $I->expect('to see a glyph-icon to delete any employee item from the table. Here we will test whether we can see the icon');
+    $I->canSeeElement(['class' => 'glyphicon-trash']); //this is a link
+  }
+
   public function createANewEmployee(AcceptanceTester $I)
   {
     $I->am('An Administrator');
@@ -14,7 +42,6 @@ class IMSStaffCest {
     $I->amGoingTo('navigate to the staff section of IMS located at /ims/employees');
     $I->amOnPage('/ims/employees');
     $I->click('Add a staff member');
-
     //filling out the form for creating a new employee
     $I->fillField('first_name','FirstNameTest');
     $I->fillField('middle_name','MiddleNameTest');
@@ -29,7 +56,6 @@ class IMSStaffCest {
     $I->fillField('phone2','+00-1234-56789');
     $I->attachFile('picture', 'testArtistPicture.png');
     $I->click('Create the Staff Member!');
-
     //confirm that the newly created artist is present.
     $I->seeCurrentUrlEquals('/ims/employees');
     $I->canSee('Successfully created the Employee!');
@@ -55,10 +81,8 @@ class IMSStaffCest {
     $I->amGoingTo('navigate to the employee section of IMS located at /ims/employees');
     $I->amOnPage('/ims/employees');
     $I->click('Add a staff member');
-
     //just click create without filling in the form
     $I->click('Create the Staff Member!');
-
     //confirm that field validation is working
     $I->seeCurrentUrlEquals('/ims/employees/create');
     $I->canSee('The first name field is required.');
@@ -104,15 +128,12 @@ class IMSStaffCest {
     $I->fillField('password', 'admin');
     $I->click('Submit');
     $I->seeCurrentUrlEquals('/ims/dashboard');
-    $I->amGoingTo('navigate to the employee section of IMS located at /ims/employees');
+    $I->amGoingTo('navigate to the employee section of IMS located at /ims/employees and click on the
+    first employee in the test database.');
     $I->amOnPage('/ims/employees');
-    $I->click('Last Updated');
-    $I->click('Last Updated');
-    $I->see('FirstNameTest');
-    $I->click(['class' => 'btn-info']); //click on link to show details of the employee
-    $I->seeCurrentUrlEquals('/ims/employees/11/edit'); //confirm on edit page of newly created artist
-
-    //perform edits
+    $I->click(['class' => 'btn-info']); //click on link to show details of the first employee
+    $I->seeCurrentUrlEquals('/ims/employees/1/edit'); //confirm on edit page of newly created artist
+    $I->amGoingTo('perform edits');
     $I->fillField('first_name','FirstNameTestEdit');
     $I->fillField('middle_name','MiddleNameTestEdit');
     $I->fillField('second_name','LastNameTestEdit');
@@ -126,7 +147,6 @@ class IMSStaffCest {
     $I->fillField('phone2','+00-1');
     $I->attachFile('picture', 'testArtistPictureTwo.jpg');
     $I->click('Edit the Employee!');
-
     //confirm that the newly edited artist is present.
     $I->seeCurrentUrlEquals('/ims/employees');
     $I->canSee('Successfully updated the Employee!');
@@ -135,9 +155,7 @@ class IMSStaffCest {
     $I->canSee('FirstNameTestEdit');
     $I->canSee('LastNameTestEdit');
     $I->canSee('CityTestEdit');
-    $I->canSee('CountryTestEdit');
-    $I->canSee('test@testedit.com');
-    $I->canSee('+00');
+    $I->canSee('CountryTestEdit'); $I->canSee('test@testedit.com'); $I->canSee('+00');
   }
 
   public function editEmployeeUsingIncorrectDataTypes(AcceptanceTester $I)
@@ -149,16 +167,14 @@ class IMSStaffCest {
     $I->fillField('password', 'admin');
     $I->click('Submit');
     $I->seeCurrentUrlEquals('/ims/dashboard');
-    $I->amGoingTo('navigate to the employee section of IMS located at /ims/employees');
+    $I->amGoingTo('navigate to the employee section of IMS located at /ims/employees. I will edit the first employee');
     $I->amOnPage('/ims/employees');
     $I->click(['class' => 'btn-info']); //click on link to show details of the first employee
     $I->seeCurrentUrlEquals('/ims/employees/1/edit'); //confirm on edit page of newly created employee
-
     //use of incorrect data types for filling out the form.
     $I->fillField('email','test');
     $I->attachFile('picture', 'testExcelFile.xlsx');
     $I->click('Edit the Employee!');
-
     //confirm that field validation is working
     $I->seeCurrentUrlEquals('/ims/employees/1/edit');
     $I->canSee('The email must be a valid email address.');
