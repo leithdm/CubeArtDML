@@ -105,9 +105,6 @@
                                         events</a></li>
                                 <li><a href="/ims/events/create"><span class="glyphicon glyphicon-plus"></span> Add an
                                         event</a></li>
-                                <li class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -150,7 +147,7 @@
                 <li><a href="/ims/events"><span class="glyphicon glyphicon-calendar"></span> Events</a></li>
                 <li><a href="/ims/gallery"><span class="glyphicon glyphicon-camera"></span> Art Gallery</a></li>
                 <li><a href="/ims/carousel"><span class="glyphicon glyphicon-play"></span> Carousel</a></li>
-                <li><a href="/ims/reports"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
             </ul>
         </div>
         {{--<div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">--}}

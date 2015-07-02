@@ -1,9 +1,8 @@
 <?php
 
 class PagesController extends \BaseController {
-
     /**
-     *
+     * Home Page Controller
      * @return mixed
      */
     public function home()
@@ -277,7 +276,7 @@ class PagesController extends \BaseController {
     }
     else
     {
-      $exhibitions = Exhibition::orderBy('date_event', 'asc')->paginate(5);
+      $exhibitions = Exhibition::orderBy('date_event', 'desc')->paginate(5);
     }
     return View::make('/events', ['exhibitions' => $exhibitions]);
   }

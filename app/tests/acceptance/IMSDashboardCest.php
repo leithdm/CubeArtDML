@@ -23,8 +23,6 @@ class IMSDashboardCest {
     $I->canSeeLink('Events', 'ims/events');
     $I->canSeeLink('Art Gallery', 'ims/gallery');
     $I->canSeeLink('Carousel', 'ims/carousel');
-    $I->canSeeLink('Reports', 'ims/reports');
-
   }
 
   public function seeUsernameOnIMSDashboard(AcceptanceTester $I)

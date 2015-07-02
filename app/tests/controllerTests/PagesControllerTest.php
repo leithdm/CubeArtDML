@@ -2,31 +2,31 @@
 
 class PagesControllerTest extends TestCase {
 
-
-  public function testHome()
+  public function testMainWebSiteRoutes()
   {
-    $response = $this->call('GET', '/');  //GET request to localhost:8000/
-    $this->assertViewHas('galleryArt');   //verifies view has the variable, $galleryArt
-    $this->assertViewHas('carouselArt');  //verifies view has the variable, $carouselArt
-    $this->assertViewHas('recentArt');    //verifies view has the variable, $recentArt
-    $this->assertViewHas('soldArt');      //verifies view has the variable, $soldArt
+    $this->call('GET', '/'); //homepage
+    $this->assertResponseOk();
 
-    //verifies controller must pass variable $galleryArt which is an instance of Eloquent\Collection
-    $galleryArt = $response->original->getData()['galleryArt'];
-    $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $galleryArt);
+    $this->call('GET', '/art/Painting'); //Painting category
+    $this->assertResponseOk();
 
-    //verifies controller must pass variable $carouselArt which is an instance of Eloquent\Collection
-    $carouselArt = $response->original->getData()['carouselArt'];
-    $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $carouselArt);
+    $this->call('GET', '/art/Photography'); //Photography category
+    $this->assertResponseOk();
 
-    //verifies controller must pass variable $recentArt which is an instance of Eloquent\Collection
-    $recentArt = $response->original->getData()['recentArt'];
-    $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $recentArt);
+    $this->call('GET', '/art/Drawing'); //Drawing category
+    $this->assertResponseOk();
 
-    //verifies controller must pass variable $soldArt which is an instance of Eloquent\Collection
-    $soldArt = $response->original->getData()['soldArt'];
-    $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $soldArt);
+    $this->call('GET', '/art/Sculpture'); //Sculpture category
+    $this->assertResponseOk();
 
+    $this->call('GET', '/art/Collage'); //Collage category
+    $this->assertResponseOk();
+
+    $this->call('GET', '/events'); //events category
+    $this->assertResponseOk();
+
+    $this->call('GET', '/admin'); //admin category
+    $this->assertResponseOk();
   }
 
 }

@@ -3,13 +3,13 @@
 @section('title')
     <title>Cube Art | {{$art->artist->first_name . " " .  $art->artist->second_name . " , " . $art->title }}</title>
 @stop
-
 @section('content')
     <div class="container">
         <div class="container">
             <div class="row">
                 <div class="art-details-header">
-                    <h2><a href="{{ URL::to('artist/' . $art->artist->id) }}">{{$art->artist->first_name . " " .  $art->artist->second_name}}</a>{{", ". "'".$art->title."'"}}</h2>
+                    <h2><a href="{{ URL::to('artist/' . $art->artist->id) }}">{{$art->artist->first_name . " " .
+                    $art->artist->second_name}}</a>{{", ". "'".$art->title."'"}}</h2>
                     <br/>
                 </div>
             </div>
