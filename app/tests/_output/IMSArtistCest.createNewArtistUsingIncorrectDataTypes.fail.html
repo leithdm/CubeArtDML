@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+        <title>IMS | Create an Artist</title>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/main.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- NAVBAR
+================================================== -->
+<body>
+<div class="navbar-wrapper">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse"
+                            data-target="#navbar"
+                            aria-expanded="false"
+                            aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img alt="Brand" src="/brand/brand.jpg"
+                                                          style="width:35px;height:30px">
+                    </a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="/ims/arts/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Inventory <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/arts"><span class="glyphicon glyphicon-search"></span> View all items</a>
+                                </li>
+                                <li><a href="/ims/arts/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/artists/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Artists <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/artists"><span class="glyphicon glyphicon-search"></span> View all
+                                        artists</a></li>
+                                <li><a href="/ims/artists/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        artist</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/customers/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Customers <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/customers"><span class="glyphicon glyphicon-search"></span> View all
+                                        customers</a></li>
+                                <li><a href="/ims/customers/create"><span class="glyphicon glyphicon-plus"></span> Add a
+                                        customer</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/orders/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Orders <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/orders"><span class="glyphicon glyphicon-search"></span> View all
+                                        orders</a></li>
+                                <li><a href="/ims/orders/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        order</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/employees/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Staff <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/employees"><span class="glyphicon glyphicon-search"></span> View all
+                                        staff</a></li>
+                                <li><a href="/ims/employees/create"><span class="glyphicon glyphicon-plus"></span> Add a
+                                        staff member</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/events/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Events <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/events"><span class="glyphicon glyphicon-search"></span> View all
+                                        events</a></li>
+                                <li><a href="/ims/events/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        event</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Howdy, admin<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/logout">Logout</a></li>
+                                <li><a href="#">Edit Profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- SIDEBAR
+================================================== -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="/ims/dashboard"><span class="glyphicon glyphicon-home"></span>
+                        Dashboard<span class="sr-only">(current)</span></a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/ims/arts"><span class="glyphicon glyphicon-shopping-cart"></span> Inventory</a>
+                <li><a href="/ims/artists"><span class="glyphicon glyphicon-tint"></span> Artists</a></li>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/ims/customers"><span class="glyphicon glyphicon-king"></span> Customers</a>
+                </li>
+                <li><a href="/ims/orders"><span class="glyphicon glyphicon-euro"></span> Orders</a>
+                </li>
+                <li><a href="/ims/employees"><span class="glyphicon glyphicon-user"></span> Staff</a></li>
+                <li><a href="/ims/events"><span class="glyphicon glyphicon-calendar"></span> Events</a></li>
+                <li><a href="/ims/gallery"><span class="glyphicon glyphicon-camera"></span> Art Gallery</a></li>
+                <li><a href="/ims/carousel"><span class="glyphicon glyphicon-play"></span> Carousel</a></li>
+                <li><a href="/ims/reports"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
+            </ul>
+        </div>
+                <!-- MAIN CONTENT
+        ================================================== -->
+            <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-1 main">
+        <h1 class="page-header"><span class="glyphicon glyphicon-plus"></span> add a new Artist</h1>
+        <!-- if there are creation errors, they will show here -->
+                    <div class="alert alert-danger">
+                <ul><li>The first name field is required.</li><li>The second name field is required.</li><li>The address1 field is required.</li><li>The address2 field is required.</li><li>The address3 field is required.</li><li>The city field is required.</li><li>The country field is required.</li><li>The about field is required.</li><li>The quote field is required.</li><li>The email must be a valid email address.</li><li>The facebook format is invalid.</li><li>The twitter format is invalid.</li><li>The pinterest format is invalid.</li><li>The google format is invalid.</li><li>The picture must be an image.</li></ul>
+            </div>
+        
+        <form method="POST" action="http://localhost:8888/ims/artists" accept-charset="UTF-8" enctype="multipart/form-data"><input name="_token" type="hidden" value="RLpTDNAd7mcmEypE59jk05VSA4iASIQMuAhd6S4o">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <select class="form-control" id="title" name="title"><option value="Mr." selected="selected">Mr.</option><option value="Mrs.">Mrs.</option><option value="Miss.">Miss.</option><option value="Ms.">Ms.</option><option value="Other">Other</option></select>
+        </div>
+
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input class="form-control" name="first_name" type="text" value="" id="first_name">
+             <p class="help-block">The first name field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="middle_name">Middle Name</label>
+            <input class="form-control" name="middle_name" type="text" value="" id="middle_name">
+                    </div>
+
+        <div class="form-group">
+            <label for="second_name">Surname</label>
+            <input class="form-control" name="second_name" type="text" value="" id="second_name">
+             <p
+                    class="help-block">The second name field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="address1">Address 1</label>
+            <input class="form-control" name="address1" type="text" value="" id="address1">
+             <p class="help-block">The address1 field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="address2">Address 2</label>
+            <input class="form-control" name="address2" type="text" value="" id="address2">
+             <p class="help-block">The address2 field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="address3">Address 3</label>
+            <input class="form-control" name="address3" type="text" value="" id="address3">
+             <p class="help-block">The address3 field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input class="form-control" name="city" type="text" value="" id="city">
+             <p class="help-block">The city field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input class="form-control" name="country" type="text" value="" id="country">
+             <p class="help-block">The country field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="about">About</label>
+            <textarea class="form-control" rows="12" name="about" cols="50" id="about"></textarea>
+             <p class="help-block">The about field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="quote">Quote</label>
+            <textarea class="form-control" rows="3" name="quote" cols="50" id="quote"></textarea>
+             <p class="help-block">The quote field is required.</p>         </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" name="email" type="text" value="test" id="email">
+             <p class="help-block">The email must be a valid email address.</p>         </div>
+
+        <div class="form-group">
+            <label for="phone1">Phone Number 1</label>
+            <input class="form-control" name="phone1" type="text" value="" id="phone1">
+                    </div>
+
+        <div class="form-group">
+            <label for="phone2">Phone Number 2</label>
+            <input class="form-control" name="phone2" type="text" value="" id="phone2">
+                    </div>
+
+        <div class="form-group">
+            <label for="facebook">FaceBook URL</label>
+            <input class="form-control" name="facebook" type="text" value="test" id="facebook">
+             <p class="help-block">The facebook format is invalid.</p>         </div>
+
+        <div class="form-group">
+            <label for="twitter">Twitter URL</label>
+            <input class="form-control" name="twitter" type="text" value="test" id="twitter">
+             <p class="help-block">The twitter format is invalid.</p>         </div>
+
+        <div class="form-group">
+            <label for="pinterest">Pinterest URL</label>
+            <input class="form-control" name="pinterest" type="text" value="test" id="pinterest">
+             <p class="help-block">The pinterest format is invalid.</p>         </div>
+
+        <div class="form-group">
+            <label for="google">Google+ URL</label>
+            <input class="form-control" name="google" type="text" value="test" id="google">
+             <p class="help-block">The google format is invalid.</p>         </div>
+
+        <div class="form-group">
+            <label for="picture">Picture</label>
+            <input name="picture" type="file" id="picture">
+             <p class="help-block">The picture must be an image.</p>         </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Create the Artist!">
+        </div>
+        </form>
+    </div>
+
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>$('#flash-overlay-modal').modal();</script>
+
+
+<script src="http://localhost:8888/js/jquery.js"></script>
+
+<script src="http://localhost:8888/js/jquery.datetimepicker.js"></script>
+
+<link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/jquery.datetimepicker.css">
+
+<script>
+    jQuery('#datetimepicker').datetimepicker({
+        formatDate:'Y/m/d',
+        minDate:'-1970/01/02'
+    });
+</script>
+
+                                                            
+</body>
+</html>

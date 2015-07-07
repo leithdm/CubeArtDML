@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+        <title>Edit the Art Item</title>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/main.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<!-- NAVBAR
+================================================== -->
+<body>
+<div class="navbar-wrapper">
+    <div class="container-fluid">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse"
+                            data-target="#navbar"
+                            aria-expanded="false"
+                            aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img alt="Brand" src="/brand/brand.jpg"
+                                                          style="width:35px;height:30px">
+                    </a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="/ims/arts/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Inventory <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/arts"><span class="glyphicon glyphicon-search"></span> View all items</a>
+                                </li>
+                                <li><a href="/ims/arts/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/artists/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Artists <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/artists"><span class="glyphicon glyphicon-search"></span> View all
+                                        artists</a></li>
+                                <li><a href="/ims/artists/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        artist</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/customers/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Customers <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/customers"><span class="glyphicon glyphicon-search"></span> View all
+                                        customers</a></li>
+                                <li><a href="/ims/customers/create"><span class="glyphicon glyphicon-plus"></span> Add a
+                                        customer</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/orders/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Orders <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/orders"><span class="glyphicon glyphicon-search"></span> View all
+                                        orders</a></li>
+                                <li><a href="/ims/orders/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        order</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/employees/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Staff <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/employees"><span class="glyphicon glyphicon-search"></span> View all
+                                        staff</a></li>
+                                <li><a href="/ims/employees/create"><span class="glyphicon glyphicon-plus"></span> Add a
+                                        staff member</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/ims/events/index" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Events <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/ims/events"><span class="glyphicon glyphicon-search"></span> View all
+                                        events</a></li>
+                                <li><a href="/ims/events/create"><span class="glyphicon glyphicon-plus"></span> Add an
+                                        event</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">Howdy, admin<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/logout">Logout</a></li>
+                                <li><a href="#">Edit Profile</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- SIDEBAR
+================================================== -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="/ims/dashboard"><span class="glyphicon glyphicon-home"></span>
+                        Dashboard<span class="sr-only">(current)</span></a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/ims/arts"><span class="glyphicon glyphicon-shopping-cart"></span> Inventory</a>
+                <li><a href="/ims/artists"><span class="glyphicon glyphicon-tint"></span> Artists</a></li>
+                </li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/ims/customers"><span class="glyphicon glyphicon-king"></span> Customers</a>
+                </li>
+                <li><a href="/ims/orders"><span class="glyphicon glyphicon-euro"></span> Orders</a>
+                </li>
+                <li><a href="/ims/employees"><span class="glyphicon glyphicon-user"></span> Staff</a></li>
+                <li><a href="/ims/events"><span class="glyphicon glyphicon-calendar"></span> Events</a></li>
+                <li><a href="/ims/gallery"><span class="glyphicon glyphicon-camera"></span> Art Gallery</a></li>
+                <li><a href="/ims/carousel"><span class="glyphicon glyphicon-play"></span> Carousel</a></li>
+                <li><a href="/ims/reports"><span class="glyphicon glyphicon-book"></span> Reports</a></li>
+            </ul>
+        </div>
+                <!-- MAIN CONTENT
+        ================================================== -->
+            <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-4 col-md-offset-1 main">
+            <h1 class="page-header"><span class="glyphicon glyphicon-pencil"></span> Edit <span
+                        style="color:#3c5f98;">testCreateArt</span></h1>
+
+            
+            Artist: <span style="color:gray;">LastNameTestEdit , FirstNameTestEdit</span>
+
+            <form method="POST" action="http://localhost:8888/ims/arts/301" accept-charset="UTF-8" enctype="multipart/form-data"><input name="_method" type="hidden" value="PUT"><input name="_token" type="hidden" value="CAmwv8BVT01tfdUlm41sX04ul71qeocFvJx0PUMp">
+            <div class="form-group">
+                <select class="form-control" name="artist"><option value="">Assign to a different artist...</option><option value="36">Abernathy, Odie</option><option value="197">Abernathy, Verla</option><option value="214">Abernathy, Elena</option><option value="105">Abshire, Adriana</option><option value="23">Altenwerth, Yasmeen</option><option value="164">Altenwerth, Filomena</option><option value="231">Anderson, Scarlett</option><option value="97">Ankunding, Lowell</option><option value="56">Armstrong, Jade</option><option value="112">Armstrong, Fanny</option><option value="171">Auer, Suzanne</option><option value="8">Aufderhar, Gillian</option><option value="47">Bailey, Wendy</option><option value="215">Balistreri, Maeve</option><option value="76">Barrows, Raina</option><option value="185">Barrows, Abdul</option><option value="130">Bartoletti, Bailee</option><option value="2">Bashirian, Kristina</option><option value="146">Batz, Samson</option><option value="11">Baumbach, Xander</option><option value="45">Bayer, Leo</option><option value="246">Beahan, Bartholome</option><option value="26">Beier, Adan</option><option value="64">Bergstrom, Brielle</option><option value="88">Bernhard, Chyna</option><option value="115">Bernhard, Adrien</option><option value="201">Block, Eliane</option><option value="49">Bode, Ferne</option><option value="190">Bogan, Drake</option><option value="79">Braun, Sherman</option><option value="91">Braun, Elroy</option><option value="15">Breitenberg, Elinor</option><option value="67">Breitenberg, Margarette</option><option value="122">Cartwright, Keara</option><option value="6">Cassin, Ruben</option><option value="106">Cole, Golden</option><option value="83">Conn, Joel</option><option value="139">Connelly, Albertha</option><option value="234">Corkery, Javon</option><option value="128">Corwin, Fay</option><option value="24">Crona, Aleen</option><option value="129">Cruickshank, Claudine</option><option value="10">D&#039;Amore, Juliana</option><option value="60">D&#039;Amore, Charles</option><option value="175">D&#039;Amore, Brandon</option><option value="218">Dibbert, Halie</option><option value="123">Dicki, Nikita</option><option value="187">Donnelly, Alison</option><option value="19">Doyle, Karine</option><option value="144">DuBuque, Megane</option><option value="72">Ebert, Odell</option><option value="117">Ebert, Jessika</option><option value="208">Ebert, Cassidy</option><option value="111">Eichmann, Alfred</option><option value="133">Eichmann, Bernita</option><option value="138">Eichmann, Bridget</option><option value="213">Emard, Gunnar</option><option value="52">Erdman, Jennings</option><option value="152">Fahey, Lon</option><option value="29">Fay, Israel</option><option value="32">Fay, Berniece</option><option value="160">Fay, Zachery</option><option value="113">Feil, Destany</option><option value="116">Ferry, Telly</option><option value="195">Ferry, Monserrat</option><option value="13">Fisher, Lori</option><option value="172">Fisher, Montana</option><option value="62">Friesen, Carlie</option><option value="241">Friesen, Gia</option><option value="39">Gaylord, Maxwell</option><option value="204">Gerhold, Leilani</option><option value="103">Gerlach, Delta</option><option value="94">Gislason, Elna</option><option value="140">Gislason, Lillian</option><option value="157">Gislason, Axel</option><option value="178">Gleichner, Ignatius</option><option value="219">Gleichner, Amara</option><option value="101">Gorczany, Raegan</option><option value="118">Gorczany, Daryl</option><option value="87">Grady, Donato</option><option value="119">Grady, Ima</option><option value="209">Grady, Jacques</option><option value="57">Grant, Talon</option><option value="78">Grant, Crystal</option><option value="53">Grimes, Effie</option><option value="224">Gusikowski, Hiram</option><option value="17">Hagenes, Adrianna</option><option value="180">Hagenes, Tiana</option><option value="186">Hansen, Axel</option><option value="124">Harber, Josue</option><option value="80">Harris, Domenick</option><option value="238">Harris, Kaya</option><option value="68">Harvey, Earline</option><option value="40">Hauck, Nicole</option><option value="205">Hauck, Adell</option><option value="86">Hegmann, Ole</option><option value="236">Heidenreich, Jared</option><option value="70">Heller, Beryl</option><option value="108">Herman, Reagan</option><option value="155">Hermann, Otilia</option><option value="163">Hermann, Ova</option><option value="232">Hessel, Werner</option><option value="198">Hettinger, Gloria</option><option value="183">Hilll, Jewel</option><option value="165">Hoeger, Palma</option><option value="181">Hoeger, Breanna</option><option value="127">Hudson, Myles</option><option value="210">Hudson, Carmella</option><option value="9">Huel, Erling</option><option value="51">Jacobi, Odie</option><option value="248">Jacobs, Molly</option><option value="25">Jaskolski, Casimir</option><option value="65">Jast, Maynard</option><option value="203">Jones, Idella</option><option value="41">Kessler, Kameron</option><option value="77">Kessler, Fletcher</option><option value="211">Kiehn, Cathryn</option><option value="73">Kilback, Henriette</option><option value="27">Koepp, Cameron</option><option value="50">Krajcik, Evelyn</option><option value="239">Krajcik, Alessandra</option><option value="3">Kreiger, Clyde</option><option value="93">Kreiger, Doyle</option><option value="7">Kris, Osvaldo</option><option value="200">Kris, Earnestine</option><option value="66">Kunde, Brenden</option><option value="55">Kunze, Trycia</option><option value="59">Lang, Aleen</option><option value="149">Langosh, Clotilde</option><option value="1">LastNameTestEdit, FirstNameTestEdit</option><option value="61">Ledner, Eunice</option><option value="120">Lehner, Makayla</option><option value="48">Leuschke, Rosanna</option><option value="202">Lind, Karolann</option><option value="179">Lockman, Juana</option><option value="30">Lowe, Houston</option><option value="156">Lynch, Pierre</option><option value="21">Maggio, Oliver</option><option value="14">Marks, Jo</option><option value="132">Marks, Bonnie</option><option value="206">Marquardt, Stone</option><option value="222">McClure, Janet</option><option value="141">McLaughlin, Morgan</option><option value="217">McLaughlin, Ericka</option><option value="100">Medhurst, Trisha</option><option value="131">Miller, Avis</option><option value="20">Mitchell, Lauryn</option><option value="250">Mitchell, Aliya</option><option value="28">Moen, Melody</option><option value="90">Moen, Franco</option><option value="125">Morissette, Johathan</option><option value="84">Mraz, Zachary</option><option value="245">Mraz, Lilian</option><option value="95">Mueller, Odie</option><option value="43">Muller, Zander</option><option value="18">Nienow, Anjali</option><option value="153">Nitzsche, Tito</option><option value="38">Nolan, Vergie</option><option value="154">O&#039;Keefe, Alexander</option><option value="240">O&#039;Keefe, Kiarra</option><option value="145">O&#039;Kon, Rashawn</option><option value="107">O&#039;Reilly, Leanne</option><option value="5">Pfannerstill, Norbert</option><option value="34">Pfannerstill, Ethan</option><option value="54">Pollich, Bernard</option><option value="189">Pouros, Brennan</option><option value="89">Powlowski, Ines</option><option value="137">Predovic, Therese</option><option value="33">Prosacco, Kaden</option><option value="98">Purdy, Cielo</option><option value="42">Quigley, Marcellus</option><option value="199">Quitzon, Francisca</option><option value="235">Ratke, Sabina</option><option value="143">Rau, Ova</option><option value="159">Raynor, Ashleigh</option><option value="227">Reichel, Rosa</option><option value="184">Rempel, Frankie</option><option value="81">Renner, Susie</option><option value="177">Renner, Fiona</option><option value="158">Reynolds, Dwight</option><option value="114">Rice, Kacey</option><option value="126">Rippin, Kathryn</option><option value="110">Ritchie, Brittany</option><option value="173">Roberts, Angie</option><option value="37">Rolfson, Kyla</option><option value="151">Romaguera, Pearl</option><option value="182">Rowe, Benny</option><option value="226">Runolfsson, Annette</option><option value="191">Ryan, Ricardo</option><option value="104">Sanford, Gino</option><option value="148">Sanford, Meda</option><option value="168">Sauer, Neva</option><option value="212">Sawayn, Louvenia</option><option value="63">Schamberger, Jerrod</option><option value="99">Schamberger, Delores</option><option value="74">Schiller, Carmel</option><option value="229">Schimmel, Meta</option><option value="12">Schmidt, Justina</option><option value="142">Schowalter, Shany</option><option value="244">Schumm, Nasir</option><option value="194">Schuppe, Cecil</option><option value="192">Shanahan, Vida</option><option value="109">Sipes, Brennon</option><option value="92">Skiles, Jayson</option><option value="46">Smitham, Allan</option><option value="161">Smitham, Paula</option><option value="220">Smitham, Wilfrid</option><option value="150">Spinka, Nathanial</option><option value="174">Sporer, Pedro</option><option value="136">Stanton, Camila</option><option value="223">Stark, Gail</option><option value="69">Steuber, Faye</option><option value="44">Stoltenberg, Aubree</option><option value="242">Stracke, Donnell</option><option value="85">Streich, Asia</option><option value="71">Terry, Hazel</option><option value="221">Terry, Haskell</option><option value="233">Terry, Raphael</option><option value="31">Thompson, Myrtis</option><option value="237">Tillman, Montana</option><option value="102">Torp, Roxane</option><option value="166">Torp, Cornell</option><option value="207">Torp, Demond</option><option value="225">Towne, Adelle</option><option value="247">Towne, Kristy</option><option value="22">Tremblay, Meta</option><option value="188">Upton, Alf</option><option value="249">Upton, Keira</option><option value="193">Veum, Watson</option><option value="228">Walker, Syble</option><option value="16">Walsh, Dena</option><option value="96">Weber, Sherman</option><option value="196">Wehner, Carley</option><option value="243">Weissnat, Cesar</option><option value="4">Wiegand, Gregory</option><option value="216">Wilderman, Theresia</option><option value="35">Will, Dakota</option><option value="135">Will, Chase</option><option value="162">Will, Francis</option><option value="169">Will, Emerson</option><option value="170">Williamson, Jayce</option><option value="82">Wiza, Lemuel</option><option value="167">Wiza, Jena</option><option value="75">Wolf, Hayden</option><option value="121">Wolf, Sasha</option><option value="58">Wuckert, Johathan</option><option value="230">Wuckert, Karolann</option><option value="176">Yundt, Hellen</option><option value="134">Zemlak, Yadira</option><option value="147">Zulauf, Vena</option></select>
+                            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status"><option value="Available" selected="selected">Available</option><option value="Sold">Sold</option><option value="Loaned Out">Loaned Out</option></select>
+                            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control" id="category" name="category"><option value="Painting" selected="selected">Painting</option><option value="Photography">Photography</option><option value="Drawing">Drawing</option><option value="Sculpture">Sculpture</option><option value="Collage">Collage</option></select>
+                            </div>
+
+            <div class="form-group">
+                <label for="year">Year</label>
+                <select class="form-control" id="year" name="year"><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980" selected="selected">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option><option value="1906">1906</option><option value="1905">1905</option><option value="1904">1904</option><option value="1903">1903</option><option value="1902">1902</option><option value="1901">1901</option><option value="1900">1900</option><option value="1899">1899</option><option value="1898">1898</option><option value="1897">1897</option><option value="1896">1896</option><option value="1895">1895</option><option value="1894">1894</option><option value="1893">1893</option><option value="1892">1892</option><option value="1891">1891</option><option value="1890">1890</option><option value="1889">1889</option><option value="1888">1888</option><option value="1887">1887</option><option value="1886">1886</option><option value="1885">1885</option><option value="1884">1884</option><option value="1883">1883</option><option value="1882">1882</option><option value="1881">1881</option><option value="1880">1880</option><option value="1879">1879</option><option value="1878">1878</option><option value="1877">1877</option><option value="1876">1876</option><option value="1875">1875</option><option value="1874">1874</option><option value="1873">1873</option><option value="1872">1872</option><option value="1871">1871</option><option value="1870">1870</option><option value="1869">1869</option><option value="1868">1868</option><option value="1867">1867</option><option value="1866">1866</option><option value="1865">1865</option><option value="1864">1864</option><option value="1863">1863</option><option value="1862">1862</option><option value="1861">1861</option><option value="1860">1860</option><option value="1859">1859</option><option value="1858">1858</option><option value="1857">1857</option><option value="1856">1856</option><option value="1855">1855</option><option value="1854">1854</option><option value="1853">1853</option><option value="1852">1852</option><option value="1851">1851</option><option value="1850">1850</option></select>
+                            </div>
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input class="form-control" name="title" type="text" value="testCreateArt" id="title">
+                            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input class="form-control" name="subject" type="text" value="testSubject" id="subject">
+                            </div>
+
+            <div class="form-group">
+                <label for="medium">Medium</label>
+                <input class="form-control" name="medium" type="text" value="testMedium" id="medium">
+                            </div>
+
+            <div class="form-group">
+                <label for="height">Height</label>
+                <input class="form-control" name="height" type="text" value="1.00" id="height">
+                            </div>
+
+            <div class="form-group">
+                <label for="width">Width</label>
+                <input class="form-control" name="width" type="text" value="11.00" id="width">
+                            </div>
+
+            <div class="form-group">
+                <label for="depth">Depth</label>
+                <input class="form-control" name="depth" type="text" value="12.00" id="depth">
+                            </div>
+
+            <div class="form-group">
+                <label for="price">Price (&euro;)</label>
+                <input class="form-control" name="price" type="text" value="5000" id="price">
+                            </div>
+
+            <div class="form-group">
+                <label for="descriptionLabel">Description</label>
+                <textarea class="form-control" rows="10" name="details" cols="50">This is an acceptance test</textarea>
+                            </div>
+
+            <div class="form-group">
+                <label for="picture">Picture</label>
+                <input name="picture" type="file" id="picture">
+                            </div>
+
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Edit">
+            </div>
+
+            </form>
+        </div>
+
+        <div class="col-md-4 col-md-offset-1 main">
+            <br/><br/><br/>
+                <img src="/artPictures/1429125293-testArtPicture.jpg" alt="picture" style="width:400px;height:400px">
+        </div>
+    </div>
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>$('#flash-overlay-modal').modal();</script>
+
+
+<script src="http://localhost:8888/js/jquery.js"></script>
+
+<script src="http://localhost:8888/js/jquery.datetimepicker.js"></script>
+
+<link media="all" type="text/css" rel="stylesheet" href="http://localhost:8888/css/jquery.datetimepicker.css">
+
+<script>
+    jQuery('#datetimepicker').datetimepicker({
+        formatDate:'Y/m/d',
+        minDate:'-1970/01/02'
+    });
+</script>
+
+                                                            
+</body>
+</html>
