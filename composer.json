@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
+        "fzaninotto/faker": "1.4.*",
          "laracasts/flash": "~1.0"
 	},
 
