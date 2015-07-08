@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c23bb8e1-ac24-4012-a3ec-9704916afc2f" name="Default" comment="made users protected fillable">
+    <list default="true" id="c23bb8e1-ac24-4012-a3ec-9704916afc2f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Art.php" afterPath="$PROJECT_DIR$/app/models/Art.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ArtsController.php" afterPath="$PROJECT_DIR$/app/controllers/ArtsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -37,8 +38,8 @@
       <file leaf-file-name="ArtsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/ArtsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7246377" vertical-offset="0" max-vertical-offset="7230">
-              <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.42028984" vertical-offset="4695" max-vertical-offset="7230">
+              <caret line="171" column="1" selection-start-line="171" selection-start-column="1" selection-end-line="171" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -94,7 +95,6 @@
         <option value="$PROJECT_DIR$/app/views/layouts/imsmaster.blade.php" />
         <option value="$PROJECT_DIR$/app/tests/acceptance/IMSDashboardCest.php" />
         <option value="$PROJECT_DIR$/app/tests/controllerTests/PagesControllerTest.php" />
-        <option value="$PROJECT_DIR$/app/models/Art.php" />
         <option value="$PROJECT_DIR$/app/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/app/views/art/Photography/view.blade.php" />
@@ -107,6 +107,7 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
+        <option value="$PROJECT_DIR$/app/models/Art.php" />
         <option value="$PROJECT_DIR$/app/controllers/ArtsController.php" />
       </list>
     </option>
@@ -554,7 +555,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436364259513</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="art rules removed">
+      <created>1436369429175</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1436369429175</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -613,7 +620,8 @@
     <MESSAGE value="moved faker to require i.e. for production" />
     <MESSAGE value="removed url laravel" />
     <MESSAGE value="made users protected fillable" />
-    <option name="LAST_COMMIT_MESSAGE" value="made users protected fillable" />
+    <MESSAGE value="art rules removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="art rules removed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1215,24 +1223,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Art.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7826087" vertical-offset="120" max-vertical-offset="1350">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.82608694" vertical-offset="285" max-vertical-offset="1830">
+          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
           <folding>
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1436300842000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1436369513000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ArtsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7246377" vertical-offset="0" max-vertical-offset="7230">
-          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.42028984" vertical-offset="4695" max-vertical-offset="7230">
+          <caret line="171" column="1" selection-start-line="171" selection-start-column="1" selection-end-line="171" selection-end-column="1" />
           <folding />
         </state>
       </provider>

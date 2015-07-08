@@ -170,7 +170,7 @@ function edit($id)
 public
 function update($id)
 {
-    $validator = Validator::make(Input::all(), Art::$rules);
+    $validator = Validator::make(Input::all(), Art::$rulesEdit);
 
     //process the login
     if ($validator->fails())

@@ -21,6 +21,22 @@ class Art extends \Eloquent {
       'details'  => 'required',
       'picture'  => 'image'
   );
+
+  public static $rulesEdit = array(
+      'status'   => 'required',
+      'title'    => 'required',
+      'subject'  => 'required',
+      'category' => 'required',
+      'medium'   => 'required',
+      'year'     => 'required',
+      'height'   => 'required|numeric',
+      'width'    => 'required|numeric',
+      'depth'    => 'required|numeric',
+      'price'    => 'required|numeric',
+      'details'  => 'required',
+      'picture'  => 'image'
+  );
+
   public function artist() {
     return $this->belongsTo('Artist');
   }
