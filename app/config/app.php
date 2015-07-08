@@ -120,7 +120,7 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-    'Laracasts\Flash\FlashServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 	),
