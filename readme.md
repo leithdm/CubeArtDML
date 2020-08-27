@@ -1,4 +1,4 @@
-#Art Gallery web application using the Laravel Framework and PHP. 
+# Art Gallery web application using the Laravel Framework and PHP. 
 
 ## Project Brief
 
@@ -31,4 +31,11 @@ The CMS has the following general requirements:
 
 Present itself as a media-manager, specifically related to art gallery pictures.
 Support the easy management of the official website show-room, allowing the client employee to select which art-item will display on the Home Page. 
+
+### Tools Used:
+1. MAMP development platform, version 3.0.7.3 (AppSolute, 2015).
+2. Laravel PHP framework, version 4.2 (Laravel, 2015).
+3. MySQL workbench, version 6.2.4 (MySQL, 2015).
+4. PhpStorm IDE (JetBrains, 2015).
+
 
