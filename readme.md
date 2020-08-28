@@ -37,5 +37,6 @@ Support the easy management of the official website show-room, allowing the clie
 2. Laravel PHP framework, version 4.2 (Laravel, 2015).
 3. MySQL workbench, version 6.2.4 (MySQL, 2015).
 4. PhpStorm IDE (JetBrains, 2015).
+5. Pivotal Tracker for Scrum
 
 
