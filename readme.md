@@ -1,4 +1,4 @@
-# Art Gallery web application using the Laravel Framework and PHP. 
+# Art Gallery web application using the Laravel Framework.
 
 ## Project Brief
 
